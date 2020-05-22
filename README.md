@@ -1,28 +1,28 @@
 # Stuff for Backends
 
-A collection of configuration scripts for Ruby on Rails applications(mainly) hosted in Ubuntu servers. Most of the work present here should work for Ubuntu 12.04+ machines.
+A collection of configuration scripts for Ruby on Rails applications hosted in Ubuntu servers. Most of the work present here should work in Ubuntu 12.04+.
 
 Scrips located in [dependencies](dependencies/) folder are meant to work with [debian-based Linux distros](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based).
 
-**Notice**
-
-All scripts asume you're setting up an AWS Ubuntu EC2 instance. This means that the system user in all scripts is always _ubuntu_. Bear it in mind when applying these scripts to a different system user.
+> NOTE: All scripts asume you're setting up an AWS Ubuntu EC2 instance. This means that the system user in all scripts is always **ubuntu**. Bear it in mind when applying these scripts to a different system user.
 
 ## Usage
 
-Run scripts with _sudo bash_ command:
+Run scripts with _sudo bash_ command, e.g:
 
 ```bash
 $ sudo bash ./dependencies/install_nginx.sh
 ```
 
-Except `dependencies/install_rvm.sh` which SHOULD be run only with _bash_ command. Doing as super user, would install RVM under `/root` folder.
+Except `dependencies/install_rvm.sh` which SHOULD be run only with _bash_ command. Doing as super user, would install RVM under `/root` folder. We don't want that.
 
 ## Folders
 
+Content of every folder in this project.
+
 ### AWS
 
-AWS utilities installation and/or configuration
+Steps to install or configure AWS utilities.
 
 - Code Deploy Agent
 - AWS CLI
@@ -36,7 +36,7 @@ AWS utilities installation and/or configuration
 
 ### Dependencies
 
-Basic software(mostly for Ruby on Rails apps)
+Software you're going to need for many Ruby on Rails apps.
 
 - [ImageMagick](https://en.wikipedia.org/wiki/ImageMagick)
 - Java 8
@@ -47,6 +47,7 @@ Basic software(mostly for Ruby on Rails apps)
 - [MySQL](http://www.mysql.com/)
 - [Nginx](https://nginx.org/)
 - [NodeJS](https://nodejs.org/)
+- [NVM](https://github.com/nvm-sh/nvm)
 - [Passenger + Nginx](https://www.phusionpassenger.com/)
 - [PostgreSQL](https://postgresql.org/)
 - [Redis](https://redis.io/)
@@ -58,16 +59,17 @@ Basic software(mostly for Ruby on Rails apps)
 
 Some installations require more work, so the fixers come to help.
 
-- Fixer for WKHTMLtoPDF
+- When locales don't work
 - RVM Troubleshooting
 
 ### macOS
 
-Dependencies that can be installed in macOS via shell scripts or using homebrew.
+Homebrew simplifies installing stuff in macOS. We cover some:
 
+- Brew itself
 - ImageMagick
+- PostgreSQL
 - Redis
-- Brew
 
 ## License
 
