@@ -1,14 +1,6 @@
 #!/bin/bash
 
+# Seen at https://hostpresto.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-14-04/
+#
 apt-get update
-apt-get -y install tcl8.5
-curl -sSL http://download.redis.io/releases/redis-stable.tar.gz -o /tmp/redis.tar.gz
-mkdir -p /tmp/redis
-tar -xzf /tmp/redis.tar.gz -C /tmp/redis --strip-components=1
-make -C /tmp/redis
-make -C /tmp/redis install
-echo -n | /tmp/redis/utils/install_server.sh
-rm -rf /tmp/redis*
-sysctl vm.overcommit_memory=1
-sed -ie 's/# bind 127.0.0.1/bind 127.0.0.1/g' /etc/redis/6379.conf
-service redis_6379 restart
+apt-get install -y redis-server

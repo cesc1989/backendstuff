@@ -1,11 +1,12 @@
 #!/bin/bash
-# Do not run as sudo or there could be trouble setting up RVM
+
+brew install gpg
 
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
 
 echo "Sourcing RVM and reloading shell"
-. /home/$(whoami)/.rvm/scripts/rvm
+. /Users/$(whoami)/.rvm/scripts/rvm
 
 echo "RVM requirements"
 rvm requirements
@@ -17,10 +18,10 @@ echo "Setting ruby-2.5.3 as default"
 rvm --default use ruby-2.5.3
 
 echo "Install bundler"
-gem install bundler --no-rdoc --no-ri
+gem install bundler --no-document
 
 # This wouldn't work because it is executed in a different
 # shell which gets invoked inside the script and not the
 # terminal window
 echo "...again"
-. /home/$(whoami)/.rvm/scripts/rvm
+. /Users/$(whoami)/.rvm/scripts/rvm

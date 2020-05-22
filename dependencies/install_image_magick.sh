@@ -4,12 +4,15 @@ echo "Installing Image magick from source"
 
 apt-get update
 apt-get -y install \
-  libpng12-dev \
+  libpng-dev \
   libglib2.0-dev \
   zlib1g-dev \
   libbz2-dev \
   libtiff4-dev \
-  libjpeg8-dev
+  libjpeg-dev \
+  libxml2-dev \
+  libx11-dev \
+  libfreetype6-dev
 
 mkdir -p ~/image_magick_download
 
