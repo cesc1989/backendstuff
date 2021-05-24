@@ -11,11 +11,11 @@ echo "Sourcing RVM and reloading shell"
 echo "RVM requirements"
 rvm requirements
 
-echo "Installing ruby-2.5.3"
-rvm install ruby-2.5.3
+echo "Installing ruby-2.7.1"
+rvm install ruby-2.7.1
 
-echo "Setting ruby-2.5.3 as default"
-rvm --default use ruby-2.5.3
+echo "Setting ruby-2.7.1 as default"
+rvm --default use ruby-2.7.1
 
 echo "Install bundler"
 gem install bundler --no-document
